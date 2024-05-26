@@ -1,5 +1,13 @@
 const boardWrapperDiv = document.querySelector('.board-wrapper');
+const widthInput = document.querySelector('input[name="width"]');
+const heightInput = document.querySelector('input[name="height"]');
+const applyButton = document.querySelector('#apply-controls');
+const initialWidth = 20;
+const initialHeight = 10;
 const cellSize = 20;
+
+widthInput.value = initialWidth;
+heightInput.value = initialHeight;
 
 function createBoard(width, height) {
     const divNode = document.createElement('div');
@@ -25,4 +33,15 @@ function renderBoard(width, height) {
     boardWrapperDiv.appendChild(boardDiv);
 }
 
-renderBoard(20, 30);
+function clearBoard() {
+    boardWrapperDiv.innerHTML = '';
+}
+
+renderBoard(initialWidth, initialHeight);
+
+applyButton.addEventListener('click', () => {
+    const width = widthInput.value;
+    const height = heightInput.value;
+    clearBoard();
+    renderBoard(width, height);
+});
