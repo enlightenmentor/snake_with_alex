@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.board-wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.board {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.cell {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
